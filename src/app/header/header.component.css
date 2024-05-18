@@ -1,0 +1,29 @@
+.header {
+    background-color: #1A1A1A; /* Gris oscuro */
+    padding: 2px 20px; /* Espacio alrededor del contenido */
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.logo {
+    height: 120px; 
+    margin-right: auto; /* Empuja la imagen hacia la izquierda */
+    margin-left: 60px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .logo {
+      max-height: 100%; /* Ajusta la altura máxima para pantallas más pequeñas */
+      margin-right: auto;
+      margin-left: -30px;
+    }
+
+    .header {
+      height: 90px;
+  }
+
+  }

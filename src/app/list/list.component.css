@@ -1,0 +1,39 @@
+  .card-container{
+    margin: 70px;
+  }
+
+/* Estilos para centrar el botón "Ver más" */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.verMas {
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; /* Cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.verMas:hover {
+  background-color: #45a049; 
+}
+
+@media (max-width: 768px) {
+  .card-container{
+    margin: 0;
+  }
+
+}
+
+.load-more-container {
+
+  margin-top: 5px;
+}
+  
+  
+  

@@ -1,0 +1,24 @@
+/* styles.css */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #EAEAEA;
+    font-family: 'Roboto', sans-serif;
+  
+}
+
+.container {
+    width: 100% !important; /* Asegura que el contenedor ocupe todo el ancho */
+    max-width: 100% !important; /* Sobrescribe cualquier max-width predeterminado */
+    padding: 0 !important; /* Elimina cualquier padding */
+    margin: 0 !important; /* Elimina cualquier margen */
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-height: 200px;
+    }
+}

@@ -1,0 +1,29 @@
+footer{
+    height: 250px;
+}
+
+#logoFooter {
+    margin-left: 80px; 
+    height: 90px;
+}
+
+.arriba{
+    background-color: black;
+    height: 130px;
+}
+.abajo{
+    background-color: #1A1A1A;
+    height: 120px;
+}
+
+ul {
+    list-style: none; /* Quita los puntos de la lista */
+    color: white;
+    margin-left: 80px;
+    
+}
+
+li {
+    display: inline; /* Coloca los elementos en una sola línea */
+    margin-right: 15px; /* Añade un margen derecho entre los elementos */
+}

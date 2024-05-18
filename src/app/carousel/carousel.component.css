@@ -1,0 +1,33 @@
+.carousel {
+    max-width: 100%; /* Limita el ancho máximo al ancho de las imágenes */
+    margin: 0 auto; /* Centrar el carrusel horizontalmente */
+    padding-bottom: 30px;
+    
+}
+
+.carousel-item img {
+    width: 1366px;
+    height: 402px;
+
+    /* object-fit: cover;  Asegura que las imágenes se ajusten dentro del contenedor sin recortarse */
+}
+
+.carousel-item {
+  transition: transform 0.2s ease; 
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 80px; /* Ajusta el ancho de las flechas */
+  height: 80px; /* Ajusta la altura de las flechas */
+  top: 45%; /* Posiciona las flechas verticalmente en el centro */
+  transform: translateY(-50%);
+  
+}
+
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+      max-height: 200px;
+    }
+  }
+  
