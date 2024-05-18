@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ServicesComponent } from '../services/services.component';
-
+import { DataGettingService } from '../services/data-getting.service';
+import { Event } from '../list/event/event.entities';
 @Component({
   selector: 'app-ficha-evento',
   standalone: true,
@@ -11,19 +11,22 @@ import { ServicesComponent } from '../services/services.component';
 })
 
 export class FichaEventoComponent {
-  eventsId: any[] = [];
-  eventId: any;
-  constructor(private route: ActivatedRoute, private servicesComponent: ServicesComponent) { }
+  evento: Event | undefined;
+  
+  constructor(private route: ActivatedRoute, private dataGettingService: DataGettingService) {
+    
+  }
 
   ngOnInit(): void {
     // Obtener un evento por ID
-    this.route.paramMap.subscribe(params => {
+    this.obtenerEvento();
+  }
+
+  obtenerEvento() {
+    this.route.paramMap.subscribe(async (params) => {
       const eventId = params.get('id');
       if (eventId) {
-        this.servicesComponent.getEventById(eventId).subscribe(event => {
-          this.eventId = event; // Puedes asignar el evento a una propiedad
-          this.eventsId = [event]; // O a un array si esperas trabajar con una lista
-        });
+        this.evento = await this.dataGettingService.getEventById(eventId);
       }
     });
   }

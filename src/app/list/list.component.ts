@@ -1,6 +1,5 @@
 //En este archivo cargare y mostrare toda la lista de eventos 
 import { Component, HostListener } from '@angular/core';
-import { ServicesComponent } from '../services/services.component'; //importo el componente
 import { OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -14,6 +13,7 @@ import { Router } from '@angular/router';
 import { FichaEventoComponent } from '../ficha-evento/ficha-evento.component';
 import { EventComponent } from './event/event.component';
 import { Event } from './event/event.entities';
+import { DataGettingService } from '../services/data-getting.service';
 
 @Component({
   selector: 'app-list',
@@ -31,7 +31,7 @@ import { Event } from './event/event.entities';
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
-  providers:[ServicesComponent]
+  providers: [DataGettingService]
 })
 
 export class ListComponent implements OnInit {
@@ -40,10 +40,16 @@ export class ListComponent implements OnInit {
   rowsToShow: number = 3;
   showLoadMoreButton: boolean = false;
   
-  constructor(public servicesComponent: ServicesComponent, public breakpointObserver: BreakpointObserver, private router: Router){}
+  constructor(
+    public dataGettingService: DataGettingService,
+    public breakpointObserver: BreakpointObserver,
+    private router: Router
+  ) {
+    
+  }
   
   ngOnInit(): void {
-    this.servicesComponent.getEvents().subscribe(data => {
+    this.dataGettingService.getEvents().subscribe(data => {
       let elements: any[] = data.Eventos;
       elements.forEach((element: any) => {
         this.events.push(new Event(

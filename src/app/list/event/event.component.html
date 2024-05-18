@@ -1,17 +1,23 @@
-<a href="evento/{{evento ? evento.id_evento : 'NULL'}}">
-    <mat-grid-tile fxFlex="calc(100% / gridCols())">
-        <mat-card class="event-card" (click)="viewEvent(evento ? evento.id_evento : 'NULL')">
-            <img mat-card-image [src]="evento ? evento.imagen_logo : 'NULL'" alt="{{ evento ? evento.nombre : 'NULL' }}">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>{{ evento ? evento.nombre : 'NULL' }}</mat-card-title>
-                <mat-card-subtitle>{{ evento ? evento.inicio_funcion : 'NULL' }}</mat-card-subtitle>
-                <mat-card-subtitle>{{ evento ? evento.lugar : 'NULL' }}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-actions>
-                <button mat-button id="precio">Comprar desde: ${{ evento ? evento.menor_precio : 'NULL' }}</button>
-                <button mat-button id="rest">{{ evento ? evento.restriccion : 'NULL' }}</button>
-            </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-</a>
+<div class="event-card">
+    <mat-card>
+        <img
+        class="event-card-clickable"
+        (click)="viewEvent(evento?.id_evento)"
+        mat-card-image [src]="evento?.imagen_logo"
+        alt="{{ evento?.nombre }}"
+        >
+        <mat-card-header
+        class="event-card-clickable"
+        (click)="viewEvent(evento?.id_evento)"
+        >
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ evento?.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{ evento?.inicio_funcion }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ evento?.lugar }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-button id="precio">Comprar desde: ${{ evento?.menor_precio }}</button>
+            <button mat-button id="rest">{{ evento?.restriccion }}</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

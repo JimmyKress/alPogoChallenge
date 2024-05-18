@@ -22,10 +22,13 @@ import { CommonModule } from '@angular/common';
 })
 export class EventComponent {
   
-  constructor(private router: Router){}
+  constructor(
+    private router: Router
+  ) {
+    
+  }
   @Input({required: true}) evento?: Event;
   viewEvent(id: any) {
     this.router.navigate(['/evento', id]);
-    
   }
 }

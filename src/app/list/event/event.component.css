@@ -1,64 +1,61 @@
-
 .event-card {
-    width: calc(90% - 10px); /* Ancho calculado para 4 columnas con espacio entre ellas */
-    height: auto;
-    margin-bottom: 130px; /* Espacio entre tarjetas */
-    padding: 0px; /* Espacio interno entre el borde y el contenido de la tarjeta */
-    line-height: 2;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(7, 6, 6, 0.404);
+  padding: 0px; /* Espacio interno entre el borde y el contenido de la tarjeta */
+  line-height: 2;
+  border-radius: 10px;
+  margin: 15px;
+  box-shadow: 0 2px 4px rgba(7, 6, 6, 0.404);
+}
 
+.event-card-clickable {
+  cursor: pointer;
+}
+
+img.mat-card-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.mat-card-header,
+.mat-card-actions {
+  text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+.mat-card-title,
+.mat-card-subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 5px; /* Espacio entre títulos y subtítulos */
+}
+
+.mat-card-actions,
+#precio{
+  background: #76BF41;
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.mat-card-actions,
+#rest{
+  background-color: #999999;
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    padding: 0;
+    margin-bottom: 70px;
+  
   }
 
-  
-  
-  img.mat-card-image {
-    max-width: 100%; 
-    height: auto;
-    margin-bottom: 10px; 
-    
+  .mat-card-actions {
+    flex-direction: column;
   }
   
   .mat-card-header,
   .mat-card-actions {
-    text-align: center; /* Centra el texto dentro de la tarjeta */
-  }
-  
-  .mat-card-title,
-  .mat-card-subtitle {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-bottom: 5px; /* Espacio entre títulos y subtítulos */
-  }
-  
-  .mat-card-actions,
-  #precio{
-    background: #76BF41;
-    color: #FFFFFF;
-    margin-right: 10px;
+    text-align: center; 
   }
 
-  .mat-card-actions,
-  #rest{
-    background-color: #999999;
-    color: #FFFFFF;
-  }
-
-  @media (max-width: 768px) {
-    .event-card {
-      padding: 0;
-      margin-bottom: 70px;
-    
-    }
-  
-    .mat-card-actions {
-      flex-direction: column;
-    }
-    
-    .mat-card-header,
-    .mat-card-actions {
-      text-align: center; 
-    }
-  
-  }
+}

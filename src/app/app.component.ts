@@ -37,7 +37,6 @@ import { FormControl } from '@angular/forms';
     MatCardModule, 
     MatGridListModule, 
     MatIconModule,
-    FiltrosComponent,
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,

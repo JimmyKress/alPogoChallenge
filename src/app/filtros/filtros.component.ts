@@ -1,5 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { ServicesComponent } from '../services/services.component';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -10,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
-import { ListComponent } from '../list/list.component';
+import { DataGettingService } from '../services/data-getting.service';
 
 @Component({
   selector: 'app-filtros',
@@ -28,7 +27,7 @@ import { ListComponent } from '../list/list.component';
           ],
   templateUrl: './filtros.component.html',
   styleUrl: './filtros.component.css',
-  providers: [ServicesComponent]
+  providers: [DataGettingService]
 })
 
 export class FiltrosComponent {
@@ -39,13 +38,13 @@ export class FiltrosComponent {
   selectedProvince: string ='';
   selecteFilt: string ='';
   filtered:any[] = [];
-  constructor(public servicesComponent: ServicesComponent){}
+  constructor(public dataGettingService: DataGettingService){}
 
  // Define la propiedad eventTypeControl como un FormControl
   eventTypeControl: FormControl = new FormControl();
 
   ngOnInit() {
-    this.servicesComponent.getEvents().subscribe(data => {
+    this.dataGettingService.getEvents().subscribe(data => {
     this.events = data.Eventos;
     this.filteredEvents = this.events;
     this.extractProvincesAndCategorys();

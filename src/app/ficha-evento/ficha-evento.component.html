@@ -1,10 +1,8 @@
-@for (event of eventsId; track eventsId) {
-    <div>
-        <h1>{{ event.nombre }}</h1>
-        <img [src]="event.imagen_logo" alt="{{ event.nombre }}">
-        <p>Inicio: {{ event.inicio_funcion }}</p>
-        <p>Lugar: {{ event.lugar }}</p>
-        <p>Restricciones: {{ event.restriccion }}</p>
-        <p>Precio: ${{ event.menor_precio }}</p>
-    </div>
-}
+<div>
+    <h1>{{ evento?.nombre }}</h1>
+    <img [src]="evento?.imagen_logo" alt="{{ evento?.nombre }}">
+    <p>Inicio: {{ evento?.inicio_funcion }}</p>
+    <p>Lugar: {{ evento?.lugar }}</p>
+    <p>Restricciones: {{ evento?.restriccion }}</p>
+    <p>Precio: ${{ evento?.menor_precio }}</p>
+</div>

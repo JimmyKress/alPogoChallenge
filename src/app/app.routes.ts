@@ -2,8 +2,10 @@ import { Routes } from '@angular/router';
 //import { FiltrosComponent } from './filtros/filtros.component';
 import { ListComponent } from './list/list.component';
 import { FichaEventoComponent } from './ficha-evento/ficha-evento.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-  { path: '', component: ListComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, pathMatch: 'full' },
   { path: 'evento/:id', component: FichaEventoComponent }
 ];

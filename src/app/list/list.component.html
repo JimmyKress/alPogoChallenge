@@ -1,11 +1,11 @@
-<div class="card-container">
-  <mat-grid-list [cols]="gridCols()" rowHeight="1:1.2" fxLayout.xs="column" fxLayout.sm="row">
+<div class="cards-container">
+  <!-- <mat-grid-list [cols]="gridCols()" rowHeight="1:1.2" fxLayout.xs="column" fxLayout.sm="row"> -->
     <ng-container *ngFor="let event of visibleEvents">
       <app-event
       [evento]="event"
       ></app-event>
     </ng-container>
-  </mat-grid-list>
+  <!-- </mat-grid-list> -->
 </div>
 <!-- Muestra el botón "Ver más" después de la tercera fila -->
 <div class="load-more-container" *ngIf="showLoadMoreButton">
