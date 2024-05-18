@@ -24,6 +24,6 @@ ul {
 }
 
 li {
-    display: inline; /* Coloca los elementos en una sola línea */
-    margin-right: 15px; /* Añade un margen derecho entre los elementos */
+    display: inline; 
+    margin-right: 15px; 
 }

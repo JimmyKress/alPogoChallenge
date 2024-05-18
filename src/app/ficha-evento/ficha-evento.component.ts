@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataGettingService } from '../services/data-getting.service';
 import { Event } from '../list/event/event.entities';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-ficha-evento',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './ficha-evento.component.html',
-  styleUrl: './ficha-evento.component.css'
+  styleUrl: './ficha-evento.component.css',
+  providers: []
 })
 
 export class FichaEventoComponent {

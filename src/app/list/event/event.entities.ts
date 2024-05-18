@@ -1,5 +1,7 @@
 export class Event
+
 {
+    
     public id_evento: string;
     public nombre: string;
     public descripcion: string;
@@ -38,6 +40,7 @@ export class Event
         menor_precio: number
     )
     {
+        
         this.id_evento = id_evento;
         this.nombre = nombre;
         this.descripcion = descripcion;
