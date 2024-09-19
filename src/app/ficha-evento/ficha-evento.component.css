@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .parentContainer {
     display: flex;
     justify-content: center;
@@ -113,4 +114,121 @@
         margin-left: 0;
     }
  }
+=======
+.parentContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+}
+
+.contenedorEvent {
+    display: flex;
+    align-items: flex-start; 
+    margin: 0 auto; 
+    width: 1100px; 
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 415px;
+    border-radius: 10px;    
+}
+
+.contenedorEvent img {
+    margin-right: 50px; 
+    max-width: 500px; 
+    height: 410px; 
+    transform: translateY(-20px); 
+    margin-left: -20px;
+
+}
+
+
+.contenedorEvent h2,
+.contenedorEvent p {
+    margin: 0; 
+}
+
+.contenedorEvent .inicio_funcion,
+.contenedorEvent .lugar,
+.contenedorEvent .descripcion_corta,
+.contenedorEvent .estado,
+.contenedorEvent .restriccion {
+    margin-bottom: 10px; 
+}
+
+
+.inicio_funcion2{
+    background: white;
+    height: 60px;
+    width: 800px;
+    margin-top: 10px;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 215px;
+    margin-bottom: 20px;
+}
+
+.subInicio{
+    margin-left: 230px;
+    padding: 18px;
+}
+
+.estado, .restriccion {
+    display: inline-block;
+    margin-right: 30px; 
+  }
+
+#map {
+    height: 400px;  
+    width: 100%;    
+}  
+
+.map{
+    margin-left: 240px;
+}
+    
+  @media screen and (max-width: 760px) {
+    .parentContainer {
+        justify-content: flex-start; 
+
+    .contenedorEvent {
+        width: 100%;
+        margin: 0;
+        padding: 10px; 
+        flex-direction: column; 
+    }
+
+    .contenedorEvent img {
+        margin: 20px; 
+        margin-bottom: 5px;
+        max-width: 100%; 
+        height: 200px; 
+        transform: none;
+        
+        margin-left: 75px;
+        
+    }
+
+
+    .inicio_funcion2 {
+        margin-bottom: 5px;
+        width: 100%; /* Ancho completo en dispositivos pequeños */
+        margin-left: 0;
+    }
+
+    .subInicio {
+        margin-left: 0; 
+    }
+
+    .estado, .restriccion {
+        margin-right: 0; 
+        margin-bottom: 20px;
+    }
+ 
+    .map{
+        width: 375px;
+        margin-left: 0;
+    }
+ }
+>>>>>>> b6b37a08eef4b49ae347f88939eb42ddb4bb22f2
 }

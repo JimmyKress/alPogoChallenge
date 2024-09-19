@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 footer{
     height: 250px;
 }
@@ -35,3 +36,34 @@ h1 {
     top: 20px;
     left: 20px;
   }
+=======
+footer{
+    height: 250px;
+}
+
+#logoFooter {
+    margin-left: 80px; 
+    height: 90px;
+}
+
+.arriba{
+    background-color: black;
+    height: 130px;
+}
+.abajo{
+    background-color: #1A1A1A;
+    height: 120px;
+}
+
+ul {
+    list-style: none; /* Quita los puntos de la lista */
+    color: white;
+    margin-left: 80px;
+    
+}
+
+li {
+    display: inline; 
+    margin-right: 15px; 
+}
+>>>>>>> b6b37a08eef4b49ae347f88939eb42ddb4bb22f2
