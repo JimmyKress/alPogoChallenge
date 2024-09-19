@@ -1,11 +1,10 @@
-//En este archivo cargare y mostrare toda la lista de eventos 
 import { Component, HostListener } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FlexLayoutServerModule } from '@angular/flex-layout/server';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -31,7 +30,7 @@ import { DataGettingService } from '../services/data-getting.service';
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
-  providers: [DataGettingService]
+  providers: [DataGettingService, DatePipe]
 })
 
 export class ListComponent implements OnInit {
@@ -43,6 +42,7 @@ export class ListComponent implements OnInit {
   constructor(
     public dataGettingService: DataGettingService,
     public breakpointObserver: BreakpointObserver,
+    private datePipe: DatePipe,
     private router: Router
   ) {
     
@@ -52,6 +52,7 @@ export class ListComponent implements OnInit {
     this.dataGettingService.getEvents().subscribe(data => {
       let elements: any[] = data.Eventos;
       elements.forEach((element: any) => {
+
         this.events.push(new Event(
           element.id_evento,
           element.nombre,
@@ -72,10 +73,12 @@ export class ListComponent implements OnInit {
           element.menor_precio
         ))
       })
+      
       this.loadMore();
     });
     
   }
+    
 
   gridCols(): number {
     if (this.breakpointObserver.isMatched('(min-width: 1100px)')) {

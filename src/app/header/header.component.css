@@ -1,17 +1,14 @@
 .header {
-    background-color: #1A1A1A; /* Gris oscuro */
-    padding: 2px 20px; /* Espacio alrededor del contenido */
+    background-color: #b3b3b3; /* Gris oscuro */
+    padding: 2px 20px; 
     display: flex;
     align-items: center;
     height: 100px;
 }
 
-.logo {
-    height: 120px; 
-    margin-right: auto; /* Empuja la imagen hacia la izquierda */
-    margin-left: 60px;
+h1 {
+  color: #228B22;
 }
-
 
 
 

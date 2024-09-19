@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ListComponent } from './list/list.component';
-import { FiltrosComponent } from './filtros/filtros.component';
 import { FooterComponent } from './footer/footer.component';
 import { FichaEventoComponent } from './ficha-evento/ficha-evento.component';
 import { EventComponent } from './list/event/event.component';
@@ -47,6 +46,7 @@ import { FormControl } from '@angular/forms';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  
 
 })
 

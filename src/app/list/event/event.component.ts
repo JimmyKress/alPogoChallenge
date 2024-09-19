@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Event } from './event.entities';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-event', 
   standalone: true,
@@ -18,7 +18,8 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   templateUrl: './event.component.html',
-  styleUrl: './event.component.css'
+  styleUrl: './event.component.css',
+  providers:[DatePipe],
 })
 export class EventComponent {
   

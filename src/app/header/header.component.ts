@@ -4,6 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -18,5 +20,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  searchQuery: string = '';
+  //searchQuery: string = '';
+  constructor(private router:Router){}
+  navigateToMain() {
+    this.router.navigate(['/']);
+  }
 }
