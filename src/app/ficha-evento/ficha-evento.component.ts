@@ -4,6 +4,8 @@ import { DataGettingService } from '../services/data-getting.service';
 import { Event } from '../list/event/event.entities';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-ficha-evento',
   standalone: true,
@@ -14,9 +16,8 @@ import { FooterComponent } from '../footer/footer.component';
 })
 
 export class FichaEventoComponent {
-  evento: Event | undefined;
-  
-  constructor(private route: ActivatedRoute, private dataGettingService: DataGettingService) {
+  evento!: Event | undefined;
+  constructor(private route: ActivatedRoute, private dataGettingService: DataGettingService, private sanitizer: DomSanitizer) {
     
   }
 
@@ -33,4 +34,9 @@ export class FichaEventoComponent {
       }
     });
   }
+
+  getSanitizedHtml(html: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
+  } 
+
 }

@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { OnInit, PLATFORM_ID  } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -13,6 +13,7 @@ import { FichaEventoComponent } from '../ficha-evento/ficha-evento.component';
 import { EventComponent } from './event/event.component';
 import { Event } from './event/event.entities';
 import { DataGettingService } from '../services/data-getting.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-list',
@@ -38,12 +39,12 @@ export class ListComponent implements OnInit {
   visibleEvents: Event[] = [];
   rowsToShow: number = 3;
   showLoadMoreButton: boolean = false;
-  
+  mostrarMensajeBienvenida = true;
   constructor(
     public dataGettingService: DataGettingService,
     public breakpointObserver: BreakpointObserver,
     private datePipe: DatePipe,
-    private router: Router
+    private router: Router,
   ) {
     
   }
@@ -76,6 +77,11 @@ export class ListComponent implements OnInit {
       
       this.loadMore();
     });
+
+    const mensajeMostrado = sessionStorage.getItem('mensajeBienvenida');
+    if (mensajeMostrado) {
+      this.mostrarMensajeBienvenida = false; // No mostrar el mensaje
+    }
     
   }
     
@@ -101,8 +107,10 @@ export class ListComponent implements OnInit {
     this.showLoadMoreButton = this.visibleEvents.length < this.events.length;
   }
 
-
+  cerrarMensaje() {
+    this.mostrarMensajeBienvenida = false;
+    sessionStorage.setItem('mensajeBienvenida', 'true'); // Marcar que el mensaje fue mostrado en la sesión
+  }
 
 }
-
 

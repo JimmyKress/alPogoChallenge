@@ -27,17 +27,45 @@
   background-color: #45a049; 
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px; /* Ajusta el ancho del modal */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.boton-ok {
+  background-color: #4CAF50; /* Verde moderado */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.boton-ok:hover {
+  background-color: #45a049; /* Un poco más oscuro al hacer hover */
+}
+
+
 @media (max-width: 768px) {
   .cards-container{
     margin: 0;
     grid-template-columns: 100%;
   }
 }
-
-.load-more-container {
-
-  margin-top: 5px;
-}
-  
-  
-  

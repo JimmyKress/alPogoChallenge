@@ -1,13 +1,14 @@
-/* styles.css */
 html, body {
     height: 100%;
 }
 
 body {
     margin: 0;
-    background-color: #EAEAEA;
+    background-color: #1A1A1A;
+   /* background-color: #EAEAEA;*/
     font-family: 'Roboto', sans-serif;
-  
+    overflow-x: hidden;
+
 }
 
 .container {
@@ -18,7 +19,14 @@ body {
 }
 
 @media (max-width: 768px) {
-    .container {
-        max-height: 200px;
+    body{
+        margin: 0;
     }
+
+    .container {
+        width: 100% !important; /* Asegura que el contenedor ocupe todo el ancho */
+        max-width: 100% !important; /* Sobrescribe cualquier max-width predeterminado */
+        overflow-x: hidden; /* Asegura que no haya desbordamiento lateral */
+    }
+    
 }

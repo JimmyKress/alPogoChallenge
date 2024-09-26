@@ -50,7 +50,7 @@ footer{
     height: 130px;
 }
 .abajo{
-    background-color: #1A1A1A;
+    background-color: #555252;
     height: 120px;
 }
 
@@ -65,3 +65,6 @@ li {
     display: inline; 
     margin-right: 15px; 
 }
+
+
+  
